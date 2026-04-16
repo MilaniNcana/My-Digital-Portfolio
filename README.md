@@ -23,7 +23,7 @@ I recorded a mock interview to demonstrate my readiness for professional job int
 
 
 <video width="640" controls>
-  <source src="MockInterview/mock-interview.mp4" type="video/mp4">
+  <source src="MockInterview/Mock_Interview.mp4" type="video/mp4">
   Your browser does not support the video tag. 
   <a href="MockInterview/mock-interview.mp4">Download the video</a> instead.
 </video>
@@ -34,7 +34,7 @@ I recorded a mock interview to demonstrate my readiness for professional job int
 
 ## ✍️ STAR Reflections
 
-### Core Reflections (Rubric Requirements)
+### Core Reflections
 
 | # | Reflection | Link |
 |---|---|---|
@@ -42,19 +42,6 @@ I recorded a mock interview to demonstrate my readiness for professional job int
 | 2 | Mock Interview Video Experience | [View Reflection](MockInterview/reflection.md) |
 | 3 | GitHub Pages Deployment | [View Reflection](GitHubPages/reflection.md) |
 
-### Work Readiness Training Reflections
-
-| # | Topic | Link |
-|---|---|---|
-| 1 | Career Counselling | [View Reflection](CareerCounselling/reflection.md) |
-| 2 | Skills and Interests | [View Reflection](SkillsInterests/reflection.md) |
-| 3 | Personality Assessment | [View Reflection](PersonalityAssessment/reflection.md) |
-| 4 | CV Creation | [View Reflection](CreateCV/reflection.md) |
-| 5 | CV Submission | [View Reflection](CVSubmission/reflection.md) |
-| 6 | Business Communication | [View Reflection](BusinessCommunication/reflection.md) |
-| 7 | Interview Skills | [View Reflection](InterviewSkills/reflection.md) |
-| 8 | Professional Networking | [View Reflection](ProfessionalNetworking/reflection.md) |
-| 9 | Workplace Etiquette | [View Reflection](WorkplaceEtiquette/reflection.md) |
 
 ---
 
