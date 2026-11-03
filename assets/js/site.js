@@ -54,47 +54,37 @@
     items.forEach(function (el) { io.observe(el); });
   }
 
-  // Rotating QR mosaic in the hero
-  var qr = document.getElementById('qr');
-  if (!qr) return;
-  var N = 25;
-  function inFinder(r, c) {
-    var spots = [[0, 0], [0, N - 7], [N - 7, 0]];
-    for (var i = 0; i < spots.length; i++) {
-      var r0 = spots[i][0], c0 = spots[i][1];
-      if (r >= r0 - 1 && r <= r0 + 7 && c >= c0 - 1 && c <= c0 + 7) {
-        var y = r - r0, x = c - c0;
-        if (y < 0 || x < 0 || y > 6 || x > 6) return 'gap';
-        var ring = Math.min(y, x, 6 - y, 6 - x);
-        return ring === 1 ? 'gap' : 'on';
-      }
+  // Typed Java class in the hero
+  var codeEl = document.getElementById('code');
+  if (!codeEl) return;
+  var T = [
+    ['k','public class '],['t','Milani'],['k',' extends '],['t','Developer'],['',' {\n'],
+    ['','  '],['t','String'],['',' based = '],['s','"Cape Town"'],['',';\n'],
+    ['','  '],['t','String'],['','[] stack = { '],['s','"Java"'],['',', '],['s','"Spring Boot"'],['',',\n'],
+    ['','                     '],['s','"Vue.js"'],['',', '],['s','"Flutter"'],['',', '],['s','"SQL"'],['',' };\n'],
+    ['','  '],['t','String'],['',' focus = '],['s','"requirements into working systems"'],['',';\n\n'],
+    ['a','  @Override'],['','\n'],
+    ['k','  public void '],['f','ship'],['','() {\n'],
+    ['','    '],['f','plan'],['','(); '],['f','build'],['','(); '],['f','test'],['','(); '],['f','deploy'],['','();\n'],
+    ['','  }\n'],
+    ['','}']
+  ];
+  function esc(t) { return t.replace(/&/g,'&amp;').replace(/</g,'&lt;'); }
+  function html(upto) {
+    var out = '', left = upto;
+    for (var i = 0; i < T.length && left > 0; i++) {
+      var part = T[i][1].slice(0, left); left -= part.length;
+      out += T[i][0] ? '<span class="' + T[i][0] + '">' + esc(part) + '</span>' : esc(part);
     }
-    return null;
+    return out;
   }
-  var cells = [];
-  for (var r = 0; r < N; r++) {
-    for (var c = 0; c < N; c++) {
-      var d = document.createElement('i');
-      var f = inFinder(r, c);
-      if (f === 'on') d.className = 'fix';
-      else if (f === 'gap') d.className = 'gap';
-      else {
-        d.className = Math.random() < 0.48 ? 'on' : '';
-        if (Math.random() < 0.05) d.classList.add('gold');
-        cells.push(d);
-      }
-      d.style.setProperty('--d', ((r + c) * 18) + 'ms');
-      qr.appendChild(d);
-    }
-  }
-  requestAnimationFrame(function () { qr.classList.add('ready'); });
-
-  if (reduce) return;
-  setInterval(function () {
-    for (var k = 0; k < 70; k++) {
-      var cell = cells[Math.floor(Math.random() * cells.length)];
-      cell.classList.toggle('on');
-      cell.classList.toggle('gold', Math.random() < 0.06);
-    }
-  }, 2400);
+  var total = T.reduce(function (n, p) { return n + p[1].length; }, 0);
+  var caret = '<span class="caret"></span>';
+  if (reduce) { codeEl.innerHTML = html(total); return; }
+  var n = 0;
+  setTimeout(function step() {
+    n += 2;
+    codeEl.innerHTML = html(n) + caret;
+    if (n < total) setTimeout(step, 22);
+  }, 650);
 })();
