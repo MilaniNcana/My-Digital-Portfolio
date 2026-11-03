@@ -100,13 +100,17 @@ We ran one-week sprints. Each sprint backlog lists the cards pulled from the Pro
 ## Reflection (STAR)
 
 **Situation**
+
 Our first sprints were about choosing and planning a project, not writing code. At first it was hard to see how a sprint backlog applies when the work is research and discussion.
 
 **Task**
+
 I needed to keep each week focused on one clear goal so that the team always knew what "finished" looked like for that sprint.
 
 **Action**
+
 I gave every sprint a single goal (discovery, idea selection, planning, system design) and only pulled cards into the sprint list that served that goal. Each card got owners and a due date, and I used the board in our stand-ups to check progress card by card.
 
 **Result**
+
 All four sprints finished every committed card, and Sprint 4 produced the user stories that now drive the Product Backlog. Looking back, our sprints were easy to complete because they contained planning work the whole team did together. The real test will be development sprints, where cards are split between individuals and depend on each other. I learned that a sprint backlog is a commitment, so it should be small enough to finish, and that the next sprint must start with the repository blocker or no development card can move.

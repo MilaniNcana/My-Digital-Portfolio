@@ -56,13 +56,17 @@ The Product Backlog is ordered by priority. The Product Owner (Vuyolwethu) owns 
 ## Reflection (STAR)
 
 **Situation**
+
 Our Trello board started as a single list of ideas with no order. After we chose the QR attendance idea, the list kept growing with research, design and build items mixed together.
 
 **Task**
+
 As Agile Lead I needed to help turn this into a real Product Backlog that the Product Owner could prioritise and the team could pull work from.
 
 **Action**
+
 On 6 August I restructured the board into a Product Backlog list and separate Sprint 1 to Sprint 4 lists, with owners, dates and labels. Remaining work stayed in the Product Backlog, ordered so that enablers and data design came before screens. For this portfolio I added priority, effort and links to user stories.
 
 **Result**
+
 The board became much easier to read, and in October the team completed the database design items straight from the backlog. The backlog also made our main problem visible: the "Finalise GitHub repository" card had been open since July and was holding up all development. I learned that a backlog is not only a to-do list; it shows dependencies and risks, and an item that blocks everything else needs active follow-up, not just a place at the top of the list.

@@ -5,8 +5,11 @@ title: Agile Project Evidence — QAMS
 # Agile Project Evidence — QAMS
 
 **Project:** QR Code Attendance Management System (QAMS)
+
 **Tagline:** *Attendance, verified.*
+
 **My role:** Agile Lead / Scrum Master
+
 **Module:** Project Presentation 3 (PRP370S / PRP371S / PRP372S) — CPUT, Faculty of Informatics and Design
 
 QAMS replaces paper attendance registers with time-limited, rotating QR codes. A lecturer starts a class session and the system shows a QR code that refreshes on screen. Students scan it to check in, and the system records attendance, blocks duplicate check-ins and flags late arrivals.

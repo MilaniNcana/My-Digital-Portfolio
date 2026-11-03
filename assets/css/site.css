@@ -1,0 +1,210 @@
+:root {
+  --forest: #026440;
+  --forest-deep: #014a2f;
+  --gold: #FFD700;
+  --charcoal: #333333;
+  --ink-soft: #5a5f5c;
+  --page: #F3F6F4;
+  --surface: #FFFFFF;
+  --line: #D9E2DD;
+  --tint: #E6F0EB;
+  --side-w: 300px;
+  --display: "Bricolage Grotesque", "Segoe UI", system-ui, sans-serif;
+  --body: "Source Sans 3", "Segoe UI", system-ui, sans-serif;
+}
+
+* { box-sizing: border-box; }
+
+html { -webkit-text-size-adjust: 100%; }
+
+body {
+  margin: 0;
+  background: var(--page);
+  color: var(--charcoal);
+  font-family: var(--body);
+  font-size: 1.0625rem;
+  line-height: 1.65;
+}
+
+a { color: var(--forest); text-decoration-thickness: 1px; text-underline-offset: 3px; }
+a:hover { color: var(--forest-deep); text-decoration-thickness: 2px; }
+:focus-visible { outline: 3px solid var(--gold); outline-offset: 2px; border-radius: 2px; }
+
+.skip {
+  position: absolute; left: -999px; top: 8px;
+  background: var(--gold); color: var(--charcoal);
+  padding: 8px 14px; font-weight: 700; z-index: 10;
+}
+.skip:focus { left: 8px; }
+
+/* ---------- Sidebar ---------- */
+.side {
+  position: fixed; inset: 0 auto 0 0;
+  width: var(--side-w);
+  background: var(--forest);
+  color: #EAF4EF;
+  overflow-y: auto;
+}
+.side-inner { padding: 48px 32px 32px; display: flex; flex-direction: column; min-height: 100%; }
+
+.name {
+  display: flex; flex-direction: column;
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: 3.4rem;
+  line-height: 0.92;
+  letter-spacing: -0.03em;
+  color: #FFFFFF;
+  text-decoration: none;
+}
+.name span:last-child { color: var(--gold); }
+.name:hover { color: #FFFFFF; }
+
+.role { margin: 16px 0 36px; font-size: 1rem; color: #CFE3D9; }
+
+.nav { display: flex; flex-direction: column; gap: 2px; }
+.nav a {
+  position: relative;
+  padding: 9px 0 9px 18px;
+  color: #EAF4EF;
+  text-decoration: none;
+  font-family: var(--display);
+  font-weight: 500;
+  font-size: 1.1rem;
+}
+.nav a::before {
+  content: ""; position: absolute; left: 0; top: 50%;
+  width: 4px; height: 0; background: var(--gold);
+  transform: translateY(-50%);
+  transition: height .2s ease;
+}
+.nav a:hover::before { height: 40%; }
+.nav a[aria-current="page"] { color: #FFFFFF; font-weight: 700; }
+.nav a[aria-current="page"]::before { height: 70%; }
+
+.links { list-style: none; margin: 36px 0 0; padding: 20px 0 0; border-top: 1px solid rgba(255,255,255,.18); font-size: .95rem; }
+.links li { margin: 6px 0; }
+.links a { color: #CFE3D9; }
+.links a:hover { color: var(--gold); }
+
+.study { margin-top: auto; padding-top: 32px; font-size: .85rem; color: #A9C9B9; line-height: 1.5; }
+
+/* ---------- Main ---------- */
+.main { margin-left: var(--side-w); padding: 56px 56px 40px; }
+.content { max-width: 760px; }
+
+.content h1 {
+  font-family: var(--display);
+  font-weight: 800;
+  font-size: clamp(2.2rem, 4vw, 3rem);
+  line-height: 1.05;
+  letter-spacing: -0.025em;
+  margin: 0 0 12px;
+  color: var(--charcoal);
+}
+.content h1 + p strong:first-child { color: var(--forest); }
+
+.content h2 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.65rem;
+  line-height: 1.2;
+  letter-spacing: -0.015em;
+  margin: 56px 0 14px;
+  padding-left: 16px;
+  border-left: 5px solid var(--gold);
+}
+.content h3 {
+  font-family: var(--display);
+  font-weight: 700;
+  font-size: 1.2rem;
+  margin: 36px 0 8px;
+  color: var(--forest);
+}
+.content h4 { font-size: 1.05rem; margin: 24px 0 6px; }
+
+.content p, .content ul, .content ol { max-width: 68ch; }
+.content ul, .content ol { padding-left: 1.3em; }
+.content li { margin: 4px 0; }
+
+.content hr { border: 0; height: 1px; background: var(--line); margin: 40px 0; }
+
+.content blockquote {
+  margin: 20px 0;
+  padding: 16px 20px;
+  background: var(--tint);
+  border-left: 4px solid var(--forest);
+  border-radius: 0 8px 8px 0;
+  color: var(--charcoal);
+}
+.content blockquote p { margin: 0; }
+
+/* Tables: scroll on small screens */
+.content table {
+  display: block;
+  overflow-x: auto;
+  width: 100%;
+  border-collapse: collapse;
+  margin: 18px 0 24px;
+  background: var(--surface);
+  border: 1px solid var(--line);
+  border-radius: 10px;
+  font-size: .97rem;
+}
+.content th {
+  text-align: left;
+  background: var(--forest);
+  color: #FFFFFF;
+  font-family: var(--display);
+  font-weight: 600;
+  padding: 10px 14px;
+  white-space: nowrap;
+}
+.content td { padding: 10px 14px; border-top: 1px solid var(--line); vertical-align: top; }
+.content tbody tr:nth-child(even) td { background: #F8FBF9; }
+
+.content code {
+  font-size: .9em;
+  background: var(--tint);
+  padding: 1px 6px;
+  border-radius: 4px;
+}
+.content pre { background: var(--charcoal); color: #F3F6F4; padding: 16px; border-radius: 8px; overflow-x: auto; }
+.content pre code { background: none; padding: 0; }
+
+.content img { max-width: 100%; height: auto; border-radius: 8px; border: 1px solid var(--line); }
+.content video {
+  width: 100%; max-width: 760px; height: auto;
+  border-radius: 12px; background: #000;
+  box-shadow: 0 0 0 6px var(--surface), 0 0 0 7px var(--line);
+  margin: 12px 0 16px;
+}
+
+/* GitHub task lists */
+.content .task-list-item { list-style: none; margin-left: -1.3em; }
+.content .task-list-item input { margin-right: 8px; accent-color: var(--forest); }
+
+.foot { max-width: 760px; margin-top: 72px; padding-top: 20px; border-top: 1px solid var(--line); color: var(--ink-soft); font-size: .9rem; }
+
+/* ---------- Mobile ---------- */
+@media (max-width: 900px) {
+  .side { position: static; width: auto; }
+  .side-inner { padding: 28px 20px 20px; min-height: 0; }
+  .name { flex-direction: row; gap: .3em; font-size: 2.3rem; }
+  .role { margin: 8px 0 16px; }
+  .nav { flex-direction: row; flex-wrap: wrap; gap: 4px 14px; }
+  .nav a { padding: 6px 0 10px; font-size: .95rem; }
+  .nav a::before { left: 0; top: auto; bottom: 2px; width: 0; height: 3px; transform: none; transition: width .2s ease; }
+  .nav a:hover::before { height: 3px; width: 40%; }
+  .nav a[aria-current="page"]::before { height: 3px; width: 100%; }
+  .links, .study { display: none; }
+  .main { margin-left: 0; padding: 32px 16px 32px; }
+  .content h2 { margin-top: 44px; font-size: 1.4rem; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  * { transition: none !important; }
+}
+
+/* Section dividers already add space; avoid doubling it */
+.content hr + h2, .content hr + h3 { margin-top: 0; }

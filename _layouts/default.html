@@ -1,0 +1,50 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <title>{% if page.title and page.url != "/" %}{{ page.title }} | {% endif %}Milani Ncana</title>
+  <meta name="description" content="{{ page.description | default: site.description }}">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+</head>
+<body>
+  <a class="skip" href="#main">Skip to content</a>
+
+  <aside class="side">
+    <div class="side-inner">
+      <a class="name" href="{{ '/' | relative_url }}">
+        <span>Milani</span>
+        <span>Ncana</span>
+      </a>
+      <p class="role">Software developer, Cape Town</p>
+
+      <nav class="nav" aria-label="Main">
+        <a href="{{ '/' | relative_url }}" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
+        <a href="{{ '/CV.html' | relative_url }}" {% if page.url == "/CV.html" %}aria-current="page"{% endif %}>CV</a>
+        <a href="{{ '/MockInterview/reflection.html' | relative_url }}" {% if page.url contains "/MockInterview/" %}aria-current="page"{% endif %}>Mock interview</a>
+        <a href="{{ '/agile/' | relative_url }}" {% if page.url contains "/agile/" %}aria-current="page"{% endif %}>Agile evidence</a>
+      </nav>
+
+      <ul class="links">
+        <li><a href="https://github.com/MilaniNcana">GitHub</a></li>
+        <li><a href="https://linkedin.com/in/milanincana/">LinkedIn</a></li>
+        <li><a href="https://milanidigital.vercel.app">milanidigital.vercel.app</a></li>
+      </ul>
+
+      <p class="study">Diploma in ICT: Application Development<br>Cape Peninsula University of Technology</p>
+    </div>
+  </aside>
+
+  <main id="main" class="main">
+    <article class="content">
+      {{ content }}
+    </article>
+    <footer class="foot">
+      Written in Markdown and published with GitHub Pages.
+    </footer>
+  </main>
+</body>
+</html>

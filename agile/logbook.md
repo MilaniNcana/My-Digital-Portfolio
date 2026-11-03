@@ -9,6 +9,7 @@ title: Agile Logbook — QAMS
 ## Evidence
 
 **Kept by:** Milani Ncana (Agile Lead / Scrum Master)
+
 **Source:** Entries are dated from card start, due and completion dates on our [Trello board](https://trello.com/b/iQ0mXfK6/qr-attendance). Full weekly logbooks were also submitted in the PRP37XS Word template.
 
 <!-- Optional: link the Word logbooks here once uploaded to the repo, e.g. [Week 14–17 July (Word)](docs/logbook-14-17-jul.docx) -->
@@ -27,7 +28,9 @@ title: Agile Logbook — QAMS
 | Fri 17 Jul | Find existing examples of each idea | Gather examples |
 
 **Blockers:** None recorded.
+
 **Review:** 4 of 4 cards done. Several ideas on the table (QR attendance, student marketplace, food ordering, shop inventory).
+
 **Retrospective:** Good participation from everyone. Ideas needed a common way to compare them, which shaped Sprint 2.
 
 ---
@@ -44,7 +47,9 @@ title: Agile Logbook — QAMS
 | Fri 24 Jul | Team decision | Decide as a group which idea to go with |
 
 **Blockers:** None recorded.
+
 **Review:** 6 of 6 cards done. Team chose the QR Code Attendance Management System because it solves a problem we experience, needs no extra hardware and fits our skills.
+
 **Retrospective:** Comparing ideas against the same questions made the decision quick and fair. Next: turn the idea into a plan.
 
 ---
@@ -61,7 +66,9 @@ title: Agile Logbook — QAMS
 | Fri 31 Jul | Assign roles | Identify project roles |
 
 **Blockers:** GitHub repository not yet set up.
+
 **Review:** 7 of 7 cards done. Roles confirmed: Product Owner, Agile Lead, developers, analyst and tester.
+
 **Retrospective:** The feedback loop on the plan improved it. Action: follow up on the repository card.
 
 ---
@@ -78,7 +85,9 @@ title: Agile Logbook — QAMS
 | Fri 7 Aug | Feature list | Determine what features are required by the QR system (US-06) |
 
 **Blockers:** GitHub repository still not finalised; database design and UI wireframes not started.
+
 **Review:** 6 of 6 cards done. Core user stories now on the board.
+
 **Retrospective:** Restructuring Trello made progress visible to everyone. Action: database design and wireframes are next; repository must be resolved before development.
 
 ---
@@ -86,7 +95,9 @@ title: Agile Logbook — QAMS
 ### Backlog update — 27 October 2026
 
 **Done:** Design the database; Determine what information must be stored in database; The database should store user details; The database should store QR IDs; Determine how users will interact with the system; Determine how user requests QR code; Determine how system generates QR code. Sprint 4 user stories refined on their cards.
+
 **Still open:** QR storage and verification logic, confirmation message, all UI wireframes.
+
 **Blocker:** Finalise GitHub repository (open since July).
 
 ---
@@ -94,13 +105,17 @@ title: Agile Logbook — QAMS
 ## Reflection (STAR)
 
 **Situation**
+
 As Agile Lead I had to keep a weekly logbook of our stand-ups, planning, reviews and retrospectives while the team worked mostly through Trello and short meetings.
 
 **Task**
+
 The logbook had to be an honest record of what the team actually did each week, so it could be used to track progress and spot problems.
 
 **Action**
+
 I dated each entry from the start, due and completion dates on the Trello cards rather than writing from memory. Early on, one draft entry described more progress than the board showed, so I changed my approach: check the live board first, then write. Each week I recorded the sprint goal, what was done per day, blockers, the review result and one retrospective action.
 
 **Result**
+
 The logbook matches the board, which makes it trustworthy evidence. Reading the entries in a row also showed a pattern I might have missed week to week: the GitHub repository blocker appears in every entry from Week 3 onward. I learned that a logbook is most useful when it is grounded in real data, and that recurring blockers in it are a signal to escalate, not just to note again.

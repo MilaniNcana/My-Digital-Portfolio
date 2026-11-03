@@ -1,0 +1,8 @@
+title: Milani Ncana — Digital Portfolio
+description: Software developer portfolio — CV, mock interview, STAR reflections and Agile project evidence.
+markdown: kramdown
+kramdown:
+  input: GFM
+  hard_wrap: false
+exclude:
+  - "*.zip"

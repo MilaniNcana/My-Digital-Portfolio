@@ -114,13 +114,17 @@ By working on this team, we commit to the principles and agreements outlined abo
 ## Reflection (STAR)
 
 **Situation**
+
 At the start of the QAMS project, our team of six had just formed and had never worked together. We had no shared rules for how often we would meet, how we would make decisions, or what "done" meant.
 
 **Task**
+
 As Agile Lead, I was responsible for helping the team create a charter that everyone agreed to, so that we could work together without confusion about roles and expectations.
 
 **Action**
+
 I took the charter template and worked through each section with the team. We agreed on roles (Vuyolwethu as Product Owner, me as Agile Lead, and the developers, analyst and tester), chose Kanban on Trello, and set our ceremonies around weekly sprints. I pushed for a clear Definition of Done and the agreement that every task must be on Trello with an owner and a due date.
 
 **Result**
+
 The charter gave us a reference point when things got unclear. Roles were never disputed, and the Trello agreement meant I could run stand-ups directly from the board. The charter did not prevent every problem: our GitHub repository setup stayed blocked for weeks, which showed me that raising a blocker early is only useful if someone follows up on it. Next time I would add an agreement that any card blocked for more than one sprint is escalated at the review.
