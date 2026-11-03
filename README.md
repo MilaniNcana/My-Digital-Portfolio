@@ -45,6 +45,22 @@ I recorded a mock interview to demonstrate my readiness for professional job int
 
 ---
 
+## 🔄 Agile Project Evidence — QAMS
+
+Agile artefacts from our team project, the **QR Code Attendance Management System (QAMS)**, where I served as Agile Lead / Scrum Master. Each page contains the evidence followed by a STAR reflection.
+
+| # | Artefact | Link |
+|---|---|---|
+| 1 | Agile Team Charter | [View](agile/team-charter.md) |
+| 2 | User Stories and Tasks | [View](agile/user-stories.md) |
+| 3 | Product Backlog | [View](agile/product-backlog.md) |
+| 4 | Sprint Backlog | [View](agile/sprint-backlog.md) |
+| 5 | Agile Logbook | [View](agile/logbook.md) |
+
+➡️ [Agile evidence overview](agile/index.md) | [Live Trello board](https://trello.com/b/iQ0mXfK6/qr-attendance)
+
+---
+
 ## 🛠️ Projects
 
 | Project | Description |
