@@ -8,7 +8,7 @@ title: Agile Logbook — QAMS
 
 ## Evidence
 
-**Kept by:** Milani Ncana (Agile Lead / Scrum Master)
+**Kept by:** Milani Ncana (Product Owner and Agile Lead / Scrum Master)
 
 **Source:** Entries are dated from card start, due and completion dates on our [Trello board](https://trello.com/b/iQ0mXfK6/qr-attendance). Full weekly logbooks were also submitted in the PRP37XS Word template.
 

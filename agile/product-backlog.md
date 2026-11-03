@@ -12,7 +12,7 @@ title: Product Backlog — QAMS
 
 <!-- Add a screenshot of the Trello Product Backlog list here, e.g. ![Product Backlog on Trello](images/product-backlog.png) -->
 
-The Product Backlog is ordered by priority. The Product Owner (Vuyolwethu) owns the order; the team estimates effort.
+The Product Backlog is ordered by priority. As Product Owner, I own the order; the team estimates effort.
 
 **Effort:** S = under a day, M = 1–2 days, L = 3+ days
 
@@ -61,7 +61,7 @@ Our Trello board started as a single list of ideas with no order. After we chose
 
 **Task**
 
-As Agile Lead I needed to help turn this into a real Product Backlog that the Product Owner could prioritise and the team could pull work from.
+As Product Owner and Agile Lead, I needed to turn this into a real Product Backlog that I could prioritise and the team could pull work from.
 
 **Action**
 

@@ -18,8 +18,8 @@ title: Agile Team Charter — QAMS
 
 | Name | Role | Key Responsibilities |
 |------|------|----------------------|
-| Vuyolwethu R. Piyo | Product Owner | Owns the product vision, prioritises the Product Backlog, accepts completed work |
-| Milani Ncana | Agile Lead / Scrum Master | Facilitates ceremonies, maintains the Trello board, removes blockers, keeps the logbook |
+| Vuyolwethu R. Piyo | Developer | System structure, attendance-tracking rules and feature definition |
+| Milani Ncana | Product Owner and Agile Lead / Scrum Master | Owns the product vision, prioritises the Product Backlog and accepts completed work; facilitates ceremonies, maintains the Trello board, removes blockers and keeps the logbook |
 | Ross Barth | Developer | Repository setup, backend development, QR system design |
 | Levi Williams | Developer | QR generation and attendance logic, system design |
 | Isheanesu Chowuraya | Developer / Analyst | Requirements analysis, system structure, documentation |
@@ -64,7 +64,7 @@ title: Agile Team Charter — QAMS
 - [ ] Team vote
 - [ ] Agile Lead decides after input
 
-*Escalation path if we're stuck:* Agile Lead facilitates a discussion, then the Product Owner decides; if still unresolved, we raise it with the lecturer.
+*Escalation path if we're stuck:* The Agile Lead facilitates a team discussion first. If there is still no agreement, the Product Owner makes the final call on scope and priority. If it remains unresolved, we raise it with the lecturer.
 
 ### 7. Definition of Done (DoD)
 
@@ -123,8 +123,8 @@ As Agile Lead, I was responsible for helping the team create a charter that ever
 
 **Action**
 
-I took the charter template and worked through each section with the team. We agreed on roles (Vuyolwethu as Product Owner, me as Agile Lead, and the developers, analyst and tester), chose Kanban on Trello, and set our ceremonies around weekly sprints. I pushed for a clear Definition of Done and the agreement that every task must be on Trello with an owner and a due date.
+I took the charter template and worked through each section with the team. We agreed on roles (me as Product Owner and Agile Lead, with the developers, analyst and tester), chose Kanban on Trello, and set our ceremonies around weekly sprints. I pushed for a clear Definition of Done and the agreement that every task must be on Trello with an owner and a due date.
 
 **Result**
 
-The charter gave us a reference point when things got unclear. Roles were never disputed, and the Trello agreement meant I could run stand-ups directly from the board. The charter did not prevent every problem: our GitHub repository setup stayed blocked for weeks, which showed me that raising a blocker early is only useful if someone follows up on it. Next time I would add an agreement that any card blocked for more than one sprint is escalated at the review.
+The charter gave us a reference point when things got unclear. Roles were never disputed, and the Trello agreement meant I could run stand-ups directly from the board. Holding both the Product Owner and Agile Lead roles meant I had to keep two jobs separate: deciding what we build, and facilitating how the team works. The charter did not prevent every problem: our GitHub repository setup stayed blocked for weeks, which showed me that raising a blocker early is only useful if someone follows up on it. Next time I would add an agreement that any card blocked for more than one sprint is escalated at the review.

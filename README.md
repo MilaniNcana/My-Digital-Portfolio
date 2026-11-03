@@ -53,7 +53,7 @@ I recorded a mock interview to demonstrate my readiness for professional job int
 
 ## <i data-lucide="workflow"></i> Agile Project Evidence — QAMS
 
-Agile artefacts from our team project, the **QR Code Attendance Management System (QAMS)**, where I served as Agile Lead / Scrum Master. Each artefact builds on the one before it, and each page ends with a STAR reflection.
+Agile artefacts from our team project, the **QR Code Attendance Management System (QAMS)**, where I served as Product Owner and Agile Lead / Scrum Master. Each artefact builds on the one before it, and each page ends with a STAR reflection.
 
 <ol class="flow" markdown="0">
   <li><a href="agile/team-charter.html"><i data-lucide="handshake"></i><strong>Team Charter</strong><span>How we agreed to work</span></a></li>

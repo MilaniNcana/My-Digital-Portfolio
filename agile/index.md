@@ -8,7 +8,7 @@ title: Agile Project Evidence — QAMS
 
 **Tagline:** *Attendance, verified.*
 
-**My role:** Agile Lead / Scrum Master
+**My role:** Product Owner and Agile Lead / Scrum Master
 
 **Module:** Project Presentation 3 (PRP370S / PRP371S / PRP372S) — CPUT, Faculty of Informatics and Design
 
@@ -34,8 +34,8 @@ This section of my portfolio contains the Agile artefacts our team produced whil
 
 | Name | Role |
 |------|------|
-| Vuyolwethu R. Piyo | Product Owner |
-| Milani Ncana | Agile Lead / Scrum Master |
+| Vuyolwethu R. Piyo | Developer |
+| Milani Ncana | Product Owner and Agile Lead / Scrum Master |
 | Ross Barth | Developer |
 | Levi Williams | Developer |
 | Isheanesu Chowuraya | Developer / Analyst |
