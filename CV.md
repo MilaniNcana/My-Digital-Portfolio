@@ -3,8 +3,8 @@
 
 ---
 
-📞 069 663 4953 | ✉️ milanincana@outlook.com | 📍 Cape Town, Western Cape  
-🔗 [LinkedIn](https://LinkedIn.com/in/milanincana/) | 🌐 [Portfolio](https://milanidigital.vercel.app) | 💻 [GitHub](https://github.com/MilaniNcana)
+<i data-lucide="phone"></i> 069 663 4953 | <i data-lucide="mail"></i> milanincana@outlook.com | <i data-lucide="map-pin"></i> Cape Town, Western Cape  
+<i data-lucide="linkedin"></i> [LinkedIn](https://LinkedIn.com/in/milanincana/) | <i data-lucide="globe"></i> [Portfolio](https://milanidigital.vercel.app) | <i data-lucide="github"></i> [GitHub](https://github.com/MilaniNcana)
 
 ---
 

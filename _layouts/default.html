@@ -3,48 +3,108 @@
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>{% if page.title and page.url != "/" %}{{ page.title }} | {% endif %}Milani Ncana</title>
+  <title>{% if page.url != "/" and page.title %}{{ page.title }} | {% endif %}Milani Ncana, Software Developer</title>
   <meta name="description" content="{{ page.description | default: site.description }}">
+  <meta name="theme-color" content="#013A26">
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,500;12..96,700;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
+  <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,400;12..96,600;12..96,700;12..96,800&family=Source+Sans+3:ital,wght@0,400;0,600;0,700;1,400&display=swap" rel="stylesheet">
   <link rel="stylesheet" href="{{ '/assets/css/site.css' | relative_url }}">
+  <script>document.documentElement.classList.add('js');</script>
 </head>
-<body>
+{%- assign url = page.url -%}
+{%- assign icon = "file-text" -%}
+{%- assign section = "" -%}
+{%- assign section_url = "" -%}
+{%- if url contains "/agile/" -%}
+  {%- assign icon = "workflow" -%}
+  {%- if url != "/agile/" -%}{%- assign section = "Agile evidence" -%}{%- assign section_url = "/agile/" -%}{%- endif -%}
+  {%- if url contains "team-charter" -%}{%- assign icon = "handshake" -%}{%- endif -%}
+  {%- if url contains "user-stories" -%}{%- assign icon = "users" -%}{%- endif -%}
+  {%- if url contains "product-backlog" -%}{%- assign icon = "layers" -%}{%- endif -%}
+  {%- if url contains "sprint-backlog" -%}{%- assign icon = "list-checks" -%}{%- endif -%}
+  {%- if url contains "logbook" -%}{%- assign icon = "calendar-days" -%}{%- endif -%}
+{%- elsif url contains "/MockInterview/" -%}{%- assign icon = "circle-play" -%}{%- assign section = "Reflections" -%}{%- assign section_url = "/#star-reflections" -%}
+{%- elsif url contains "/CodingInMarkdown/" -%}{%- assign icon = "file-code" -%}{%- assign section = "Reflections" -%}{%- assign section_url = "/#star-reflections" -%}
+{%- elsif url contains "/GitHubPages/" -%}{%- assign icon = "globe" -%}{%- assign section = "Reflections" -%}{%- assign section_url = "/#star-reflections" -%}
+{%- endif -%}
+<body class="{% if url == '/' %}home{% else %}inner{% endif %}">
   <a class="skip" href="#main">Skip to content</a>
+  <div class="progress" aria-hidden="true"><span></span></div>
 
-  <aside class="side">
-    <div class="side-inner">
-      <a class="name" href="{{ '/' | relative_url }}">
-        <span>Milani</span>
-        <span>Ncana</span>
+  <header class="topbar">
+    <div class="topbar-inner">
+      <a class="brand" href="{{ '/' | relative_url }}" aria-label="Milani Ncana, home">
+        <span class="mark">MN</span>
+        <span class="brand-name">Milani Ncana</span>
       </a>
-      <p class="role">Software developer, Cape Town</p>
-
-      <nav class="nav" aria-label="Main">
-        <a href="{{ '/' | relative_url }}" {% if page.url == "/" %}aria-current="page"{% endif %}>Home</a>
-        <a href="{{ '/CV.html' | relative_url }}" {% if page.url == "/CV.html" %}aria-current="page"{% endif %}>CV</a>
-        <a href="{{ '/MockInterview/reflection.html' | relative_url }}" {% if page.url contains "/MockInterview/" %}aria-current="page"{% endif %}>Mock interview</a>
-        <a href="{{ '/agile/' | relative_url }}" {% if page.url contains "/agile/" %}aria-current="page"{% endif %}>Agile evidence</a>
+      <button class="menu-btn" type="button" aria-expanded="false" aria-controls="site-nav">
+        <i data-lucide="menu"></i><span class="sr">Menu</span>
+      </button>
+      <nav id="site-nav" class="nav" aria-label="Main">
+        <a href="{{ '/' | relative_url }}" {% if url == "/" %}aria-current="page"{% endif %}><i data-lucide="house"></i>Home</a>
+        <a href="{{ '/CV.html' | relative_url }}" {% if url == "/CV.html" %}aria-current="page"{% endif %}><i data-lucide="file-text"></i>CV</a>
+        <a href="{{ '/MockInterview/reflection.html' | relative_url }}" {% if url contains "/MockInterview/" %}aria-current="page"{% endif %}><i data-lucide="circle-play"></i>Interview</a>
+        <a href="{{ '/agile/' | relative_url }}" {% if url contains "/agile/" %}aria-current="page"{% endif %}><i data-lucide="workflow"></i>Agile evidence</a>
       </nav>
-
-      <ul class="links">
-        <li><a href="https://github.com/MilaniNcana">GitHub</a></li>
-        <li><a href="https://linkedin.com/in/milanincana/">LinkedIn</a></li>
-        <li><a href="https://milanidigital.vercel.app">milanidigital.vercel.app</a></li>
-      </ul>
-
-      <p class="study">Diploma in ICT: Application Development<br>Cape Peninsula University of Technology</p>
     </div>
-  </aside>
+  </header>
+
+  {% if url == "/" %}
+  <section class="hero">
+    <div class="hero-inner">
+      <div class="hero-copy">
+        <p class="kicker"><i data-lucide="map-pin"></i>Software developer in Cape Town</p>
+        <h1 class="hero-name"><span>Milani</span><span>Ncana</span></h1>
+        <p class="lead">I build web and mobile applications with Java, Spring Boot, Vue.js and Flutter, and turn requirements into systems people can rely on.</p>
+        <div class="hero-actions">
+          <a class="btn btn-gold" href="{{ '/CV.html' | relative_url }}"><i data-lucide="file-text"></i>View my CV</a>
+          <a class="btn btn-line" href="#watch"><i data-lucide="circle-play"></i>Watch my interview</a>
+        </div>
+        <ul class="chips" aria-label="Core stack">
+          <li>Java</li><li>Spring Boot</li><li>Vue.js</li><li>TypeScript</li><li>Flutter</li><li>SQL</li>
+        </ul>
+      </div>
+      <figure class="qr-wrap">
+        <div class="qr" id="qr" aria-hidden="true"></div>
+        <figcaption>This code changes every few seconds, like the rotating attendance tokens in QAMS, the QR attendance system I helped plan as Scrum Master.</figcaption>
+      </figure>
+    </div>
+  </section>
+  {% else %}
+  <section class="page-head">
+    <div class="page-head-inner">
+      <nav class="crumbs" aria-label="Breadcrumb">
+        <a href="{{ '/' | relative_url }}">Home</a>
+        {% if section != "" %}<i data-lucide="chevron-right"></i><a href="{{ section_url | relative_url }}">{{ section }}</a>{% endif %}
+      </nav>
+      <div class="page-title">
+        <span class="page-icon"><i data-lucide="{{ icon }}"></i></span>
+        <h1>{{ page.title | default: site.title }}</h1>
+      </div>
+    </div>
+  </section>
+  {% endif %}
 
   <main id="main" class="main">
-    <article class="content">
+    <article class="content{% if url != '/' %} sheet{% endif %}">
       {{ content }}
     </article>
-    <footer class="foot">
-      Written in Markdown and published with GitHub Pages.
-    </footer>
   </main>
+
+  <footer class="foot">
+    <div class="foot-inner">
+      <span>Written in Markdown and published with GitHub Pages.</span>
+      <span class="foot-links">
+        <a href="https://github.com/MilaniNcana" aria-label="GitHub"><i data-lucide="github"></i></a>
+        <a href="https://linkedin.com/in/milanincana/" aria-label="LinkedIn"><i data-lucide="linkedin"></i></a>
+        <a href="https://milanidigital.vercel.app" aria-label="Milanidigital website"><i data-lucide="globe"></i></a>
+        <a href="mailto:milanincana@outlook.com" aria-label="Email"><i data-lucide="mail"></i></a>
+      </span>
+    </div>
+  </footer>
+
+  <script src="{{ '/assets/js/lucide.min.js' | relative_url }}"></script>
+  <script src="{{ '/assets/js/site.js' | relative_url }}"></script>
 </body>
 </html>
