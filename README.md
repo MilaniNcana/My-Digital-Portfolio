@@ -97,6 +97,6 @@ Agile artefacts from our team project, the **QR Code Attendance Management Syste
 
 ## <i data-lucide="target"></i> Final Reflection
 
-This portfolio taught me to strategically align my skills with career goals and showcase growth through evidence. Building it in Markdown and deploying it on GitHub Pages demonstrated that professional presentation and technical skill go hand in hand. Through the work readiness training, mock interview practice, and self-reflection process, I have developed a strong foundation for entering the software development industry with confidence. Leading QAMS as Product Owner and Scrum Master added practical Agile experience: running sprints, managing a backlog, and dealing with real blockers in a team.
+This portfolio taught me to strategically align my skills with career goals and showcase growth through evidence. Building it in Markdown and deploying it on GitHub Pages demonstrated that professional presentation and technical skill go hand in hand. Through the work readiness training, mock interview practice, and self-reflection process, I have developed a strong foundation for entering the software development industry with confidence. Leading QAMS as Product Owner and Scrum Master added practical Agile experience: running sprints, managing a backlog, clearing a real blocker, and taking the system from planning to a deployed product.
 
 > **Built with** GitHub Flavoured Markdown | **Deployed on** GitHub Pages

@@ -11,15 +11,15 @@ title: Agile Team Charter — QAMS
 ### 1. Team Purpose and Vision
 
 - **Team mission:** Replace slow, error-prone paper attendance registers with a fast, fraud-resistant digital check-in for students, lecturers and administrators at Universities of Technology and TVET colleges, starting with CPUT as the pilot.
-- **Success definition:** A working prototype where a lecturer starts a session, students check in by scanning a rotating QR code, duplicate or shared check-ins are blocked, and attendance reports can be exported. Success also means delivering every assessed artefact on time.
+- **Success definition:** A working system where a lecturer starts a session, students check in by scanning a rotating QR code, duplicate or shared check-ins are blocked, and attendance can be tracked against each module's threshold. Success also means delivering every assessed artefact on time.
 - **Product / Service:** QAMS — a web-based QR Code Attendance Management System (Vue.js 3 frontend, Spring Boot REST API, MySQL database).
 
 ### 2. Team Members and Roles
 
 | Name | Role | Key Responsibilities |
 |------|------|----------------------|
-| Vuyolwethu R. Piyo | Developer | System structure, attendance-tracking rules and feature definition |
 | Milani Ncana | Product Owner and Agile Lead / Scrum Master | Owns the product vision, prioritises the Product Backlog and accepts completed work; facilitates ceremonies, maintains the Trello board, removes blockers and keeps the logbook |
+| Vuyolwethu R. Piyo | Developer | System structure, attendance-tracking rules and feature definition |
 | Ross Barth | Developer | Repository setup, backend development, QR system design |
 | Levi Williams | Developer | QR generation and attendance logic, system design |
 | Isheanesu Chowuraya | Developer / Analyst | Requirements analysis, system structure, documentation |
@@ -29,7 +29,7 @@ title: Agile Team Charter — QAMS
 
 **3.1 Agile Framework**
 
-- [x] Kanban, run on Trello, organised into weekly sprints (Sprint 1 to Sprint 4) with a Product Backlog list
+- [x] Scrum with one-week sprints, tracked on a Trello board (Product Backlog list plus one list per sprint)
 
 **3.2 Ceremonies**
 
@@ -46,50 +46,49 @@ title: Agile Team Charter — QAMS
 - We respect timeboxes
 - We give constructive feedback
 - We raise blockers early, at the stand-up, not at the deadline
-- Every task lives on the Trello board with an owner and a due date
+- Every task lives on the Trello board with an owner and a due date, and the board is updated daily
+- No pushing straight to `main`: changes go through pull requests
 - We commit to continuous improvement
 
 ### 5. Communication
-<!-- CONFIRM: check these channels match what the team actually used -->
 
-- **Primary channels:** Group chat for day-to-day messages, Trello for all task tracking, online calls for ceremonies
-- **Response-time expectations:** Reply within the same working day; urgent blockers flagged immediately in the group chat
-- **Remote / hybrid norms:** Cameras on during planning and retrospectives where possible; update Trello before each stand-up
+- **Primary channels:** WhatsApp group for day-to-day messages, Microsoft Teams for calls and ceremonies, GitHub for code and issues, and email for formal communication
+- **Response-time expectations:** Messages during core hours (09:00–17:00 weekdays) answered within 2 hours; urgent blockers flagged to everyone; non-urgent items answered within 24 hours
+- **Remote / hybrid norms:** Cameras on for planning, reviews and retrospectives; optional for daily stand-ups; mute when not speaking
 
 ### 6. Decision-Making
-<!-- CONFIRM: tick the option the team actually agreed on -->
 
-- [x] Consensus for team-wide decisions (for example, choosing the project idea)
-- [x] Product Owner final decision on scope and priority
+- [x] Consensus — the default for technical and process decisions
+- [x] Product Owner final decision — for scope and priority disputes
 - [ ] Team vote
 - [ ] Agile Lead decides after input
 
-*Escalation path if we're stuck:* The Agile Lead facilitates a team discussion first. If there is still no agreement, the Product Owner makes the final call on scope and priority. If it remains unresolved, we raise it with the lecturer.
+*Escalation path if we're stuck:* discuss in stand-up, then raise it in the retrospective, then the Agile Lead calls a short decision meeting, and the lecturer is consulted as a last resort.
 
 ### 7. Definition of Done (DoD)
 
-A card is done only when:
+A piece of work is done only when:
 
-- The work meets the card's description or acceptance criteria
-- It has been reviewed by at least one other team member
-- Tests pass (for code) or the document has been proofread (for documentation)
-- Documentation and the Trello card are updated
-- The Product Owner has accepted it
-- Code is merged to the shared GitHub repository and deployed to the agreed environment
+- The code is written, compiles and runs without errors
+- It has been reviewed through a pull request
+- It is covered by at least one automated or documented manual test, and existing tests still pass
+- The README or user documentation is updated where relevant
+- The Product Owner has accepted it against its acceptance criteria
+- It is merged to `main` and deployed to the agreed environment
 
 ### 8. Core Values and Behaviours
 
-- Respect
-- Transparency
-- Accountability
-- Trust
-- Learning mindset
+- **Respect:** respect everyone's time, input and level of experience
+- **Transparency:** share progress, blockers and mistakes openly
+- **Accountability:** own your commitments; if something slips, say so early
+- **Trust:** assume good intent
+- **Learning mindset:** treat every sprint as a chance to learn something new
 
 ### 9. Risks and Constraints
 
-- **Known risks:** Some students may not have a smartphone; poor classroom internet; QR screenshots shared remotely; low lecturer adoption; server downtime during class
-- **Dependencies:** A shared GitHub repository must be set up before development can start; finalised database design and UI wireframes are needed before building screens
-- **Constraints:** Academic timeline; zero budget (free-tier hosting on Vercel and Railway/Render); POPIA compliance for student data; team members balancing other modules
+- **Known risks:** clashing assessment deadlines across subjects; uneven Git and GitHub experience; load-shedding and unstable internet; scope creep from over-ambition
+- **Dependencies:** a shared GitHub repository before development can start; finalised database design and wireframes before building screens; a free hosting platform
+- **Constraints:** academic timeline; zero budget (free tiers on Vercel, Render and Aiven); POPIA compliance for student data
 
 ### 10. Review and Improvement
 
@@ -102,8 +101,8 @@ By working on this team, we commit to the principles and agreements outlined abo
 
 | Name | Signature / Agreement |
 |------|-----------------------|
-| Vuyolwethu R. Piyo | Agreed |
 | Milani Ncana | Agreed |
+| Vuyolwethu R. Piyo | Agreed |
 | Ross Barth | Agreed |
 | Levi Williams | Agreed |
 | Isheanesu Chowuraya | Agreed |
@@ -114,17 +113,13 @@ By working on this team, we commit to the principles and agreements outlined abo
 ## Reflection (STAR)
 
 **Situation**
-
-At the start of the QAMS project, our team of six had just formed and had never worked together. We had no shared rules for how often we would meet, how we would make decisions, or what "done" meant.
+In July our team of six formed for the QAMS project. We had never worked together, and we had no shared rules for how often we would meet, how we would make decisions or what "done" meant.
 
 **Task**
-
-As Agile Lead, I was responsible for helping the team create a charter that everyone agreed to, so that we could work together without confusion about roles and expectations.
+As Product Owner and Agile Lead, I had to get a charter in place that everyone agreed to before any real work started, so that roles and expectations were clear from day one.
 
 **Action**
-
-I took the charter template and worked through each section with the team. We agreed on roles (me as Product Owner and Agile Lead, with the developers, analyst and tester), chose Kanban on Trello, and set our ceremonies around weekly sprints. I pushed for a clear Definition of Done and the agreement that every task must be on Trello with an owner and a due date.
+I drafted the charter from our business case and shared it in our WhatsApp group with the parts the team needed to confirm: roles, communication channels, sprint length and core hours. Team members signed it. We chose one-week sprints on Trello because our academic calendar was too short for two-week sprints, and I made sure the Definition of Done covered pull requests, testing and deployment, not just "the code works".
 
 **Result**
-
-The charter gave us a reference point when things got unclear. Roles were never disputed, and the Trello agreement meant I could run stand-ups directly from the board. Holding both the Product Owner and Agile Lead roles meant I had to keep two jobs separate: deciding what we build, and facilitating how the team works. The charter did not prevent every problem: our GitHub repository setup stayed blocked for weeks, which showed me that raising a blocker early is only useful if someone follows up on it. Next time I would add an agreement that any card blocked for more than one sprint is escalated at the review.
+The charter gave us a clear structure for the four planning sprints, and roles were never disputed. Holding both the Product Owner and Agile Lead roles taught me to keep two jobs separate: deciding what we build, and making sure the process runs. The charter did not stop every problem. When the shared repository card stayed open for weeks, I eventually set up the repository and moved into development myself. Next time I would add an agreement that any card blocked for more than one sprint is escalated at the review.

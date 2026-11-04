@@ -8,14 +8,37 @@ title: User Stories and Tasks — QAMS
 
 ## Evidence
 
-User stories follow the format **As a** [user], **I want** [goal], **so that** [benefit]. Each story has acceptance criteria and is broken into tasks. Stories US-01 to US-06 are written on the Sprint 4 cards of our Trello board; US-07 to US-10 come from the remaining Product Backlog.
+User stories follow the format **As a** [user], **I want** [goal], **so that** [benefit]. Each story has acceptance criteria, is broken into tasks, and shows where it stands in the built system.
+
+- US-01 to US-06 are written on the Sprint 4 cards of our [Trello board](https://trello.com/b/iQ0mXfK6/qr-attendance).
+- US-07 to US-10 come from the remaining Product Backlog.
+- US-11 and US-12 were added during development, when testing showed lecturers and administrators needed more control.
 
 **Priority key (MoSCoW):** Must have, Should have, Could have.
+
+### Delivery summary
+
+| Story | Priority | Status |
+|-------|----------|--------|
+| US-01 Secure role-based login | Must | Done |
+| US-02 Rotating QR code | Must | Done |
+| US-03 Prevent duplicate check-ins | Must | Done |
+| US-04 Validate every API request | Must | Done |
+| US-05 Data retention policy | Should | Not started |
+| US-06 Attendance reports and export | Should | Partly done |
+| US-07 Scan to check in | Must | Done |
+| US-08 Check-in confirmation | Must | Done |
+| US-09 Attendance dashboard | Should | Done |
+| US-10 Profile and settings | Could | Not started |
+| US-11 Lecturer class management | Should | Done |
+| US-12 Admin dashboard | Should | Done |
+
+All seven "Must have" stories are delivered in the deployed system.
 
 ---
 
 ### US-01 — Secure role-based login
-**Priority:** Must have | **Trello:** [Design the actual structure of the system](https://trello.com/c/T3KxyL3H)
+**Priority:** Must have | **Status:** Done | **Trello:** [Design the actual structure of the system](https://trello.com/c/T3KxyL3H)
 
 > **As a** system user (Student, Lecturer, Admin)
 > **I want** to log in securely with my institutional credentials
@@ -29,17 +52,17 @@ User stories follow the format **As a** [user], **I want** [goal], **so that** [
 
 **Tasks**
 
-- [ ] Design login page wireframe
-- [ ] Create `User` table with role column (STUDENT, LECTURER, ADMIN)
-- [ ] Build `POST /api/auth/login` endpoint that returns a JWT
-- [ ] Build Vue login form and store the token
-- [ ] Add route guards per role
-- [ ] Write tests for valid, invalid and wrong-role logins
+- [x] Design login page wireframe
+- [x] Create `users` table with a role column (STUDENT, LECTURER, ADMIN)
+- [x] Build the login endpoint that returns a JWT
+- [x] Build the Vue login form and store the token
+- [x] Add route guards per role
+- [x] Test valid, invalid and wrong-role logins
 
 ---
 
 ### US-02 — Rotating QR code for a class session
-**Priority:** Must have | **Trello:** [Identify what the QR system will do](https://trello.com/c/ZfJoExhM)
+**Priority:** Must have | **Status:** Done | **Trello:** [Identify what the QR system will do](https://trello.com/c/ZfJoExhM)
 
 > **As a** lecturer
 > **I want** the system to generate dynamic, short-lived QR codes for my active class session
@@ -48,21 +71,21 @@ User stories follow the format **As a** [user], **I want** [goal], **so that** [
 **Acceptance criteria**
 
 - Starting a session shows a QR code on the lecturer's screen
-- The code refreshes automatically on a fixed interval
-- A token older than its validity window is rejected
+- The code changes automatically every 30 seconds
+- A code that has expired is rejected
 
 **Tasks**
 
-- [ ] Create `Session` and `QRToken` tables
-- [ ] Generate signed, time-limited tokens on the server (ZXing)
-- [ ] Build `POST /api/sessions` (start) and `GET /api/sessions/{id}/qr` (current code)
-- [ ] Build lecturer "present" screen that polls for a new code
-- [ ] Test token expiry
+- [x] Create `sessions` and `qr_tokens` tables
+- [x] Generate time-limited tokens on the server and render them as QR images (ZXing)
+- [x] Build endpoints to start a session and fetch the current code
+- [x] Build the lecturer's live session screen that refreshes the code
+- [x] Write automated tests for token rotation and expiry
 
 ---
 
 ### US-03 — Prevent duplicate check-ins
-**Priority:** Must have | **Trello:** [Decide the QR system will track attendance](https://trello.com/c/lGXowKl7)
+**Priority:** Must have | **Status:** Done | **Trello:** [Decide the QR system will track attendance](https://trello.com/c/lGXowKl7)
 
 > **As the** system
 > **I want** to prevent duplicate check-ins for the same student in a single session
@@ -71,19 +94,19 @@ User stories follow the format **As a** [user], **I want** [goal], **so that** [
 **Acceptance criteria**
 
 - A student's first valid scan in a session creates one attendance record
-- A second scan in the same session returns "already checked in" and creates nothing
+- A second scan in the same session is rejected and creates nothing
 
 **Tasks**
 
-- [ ] Add a unique constraint on (`student_id`, `session_id`) in `AttendanceRecord`
-- [ ] Handle the constraint error in the check-in service
-- [ ] Return a clear message to the student
-- [ ] Test double-scan and concurrent-scan cases
+- [x] Add a unique key on (`session_id`, `student_id`) in the attendance table
+- [x] Handle the duplicate case in the check-in service
+- [x] Return a clear message to the student
+- [x] Test the duplicate check-in rejection end to end
 
 ---
 
 ### US-04 — Validate every API request
-**Priority:** Must have | **Trello:** [Determine who will use the system](https://trello.com/c/QYU3AU9U)
+**Priority:** Must have | **Status:** Done | **Trello:** [Determine who will use the system](https://trello.com/c/QYU3AU9U)
 
 > **As the** system
 > **I want** to validate incoming API requests against the user's JWT and assigned role
@@ -91,19 +114,20 @@ User stories follow the format **As a** [user], **I want** [goal], **so that** [
 
 **Acceptance criteria**
 
-- Requests without a valid token return 401
-- Requests with a valid token but the wrong role return 403
+- Requests without a valid token are rejected with 401
+- Requests with a valid token but the wrong role are rejected with 403
+- An expired token gives the user a clear response instead of failing silently
 
 **Tasks**
 
-- [ ] Configure Spring Security JWT filter
-- [ ] Annotate endpoints with role rules
-- [ ] Test 401 and 403 responses
+- [x] Configure the Spring Security JWT filter
+- [x] Add role rules to endpoints
+- [x] Add a JSON response for expired tokens and denied access
 
 ---
 
 ### US-05 — Data retention policy
-**Priority:** Should have | **Trello:** [Determine what data needs to be stored](https://trello.com/c/QDjDVh6H)
+**Priority:** Should have | **Status:** Not started | **Trello:** [Determine what data needs to be stored](https://trello.com/c/QDjDVh6H)
 
 > **As a** database administrator
 > **I want** to set data lifecycle and retention policies for historical attendance records
@@ -116,14 +140,14 @@ User stories follow the format **As a** [user], **I want** [goal], **so that** [
 
 **Tasks**
 
-- [ ] List every field to store and justify it
+- [x] List every field to store and justify it (done during database design)
 - [ ] Set the retention period (Product Owner decision)
-- [ ] Design archive table or job
+- [ ] Build an archive job for old records
 
 ---
 
 ### US-06 — Attendance reports and export
-**Priority:** Should have | **Trello:** [Determine what features are required by the QR system](https://trello.com/c/4hq7WZnH)
+**Priority:** Should have | **Status:** Partly done | **Trello:** [Determine what features are required by the QR system](https://trello.com/c/4hq7WZnH)
 
 > **As an** administrator
 > **I want** to generate attendance reports and export official class registers (CSV/PDF)
@@ -131,20 +155,19 @@ User stories follow the format **As a** [user], **I want** [goal], **so that** [
 
 **Acceptance criteria**
 
-- Admin can filter by course, class and date range
+- Admin can see attendance activity per user and class
 - Export produces a CSV and a PDF with the same data
 
 **Tasks**
 
-- [ ] Design records page wireframe
-- [ ] Build report query endpoint
+- [x] Show attendance and activity per user on the admin dashboard
 - [ ] Add CSV and PDF export
 - [ ] Test export against known data
 
 ---
 
 ### US-07 — Scan to check in
-**Priority:** Must have | **Trello:** [Design scan page](https://trello.com/c/dG9Pvwze), [System should verify code](https://trello.com/c/wV8iHjcH)
+**Priority:** Must have | **Status:** Done | **Trello:** [Design scan page](https://trello.com/c/dG9Pvwze), [System should verify code](https://trello.com/c/wV8iHjcH)
 
 > **As a** student
 > **I want** to scan the QR code on screen with my phone
@@ -154,18 +177,19 @@ User stories follow the format **As a** [user], **I want** [goal], **so that** [
 
 - The scan page opens the phone camera
 - A valid, unexpired code records attendance against the logged-in student
+- A code can also be typed in if the camera fails
 
 **Tasks**
 
-- [ ] Design scan page wireframe
-- [ ] Add camera scanning (vue-qrcode-reader)
-- [ ] Build `POST /api/checkins` that verifies the token
-- [ ] Update the database after verification
+- [x] Design the scan page wireframe
+- [x] Add camera scanning (vue-qrcode-reader)
+- [x] Build the check-in endpoint that verifies the token
+- [x] Update the database after verification
 
 ---
 
 ### US-08 — Check-in confirmation
-**Priority:** Must have | **Trello:** [User should receive confirmation](https://trello.com/c/Hzd7sxqp)
+**Priority:** Must have | **Status:** Done | **Trello:** [User should receive confirmation](https://trello.com/c/Hzd7sxqp)
 
 > **As a** student
 > **I want** to see a confirmation after I scan
@@ -173,13 +197,13 @@ User stories follow the format **As a** [user], **I want** [goal], **so that** [
 
 **Tasks**
 
-- [ ] Show success, late and error states on the scan page
-- [ ] Return check-in time and status from the API
+- [x] Show success, late and error states on the scan result screen
+- [x] Return check-in time and status from the API
 
 ---
 
 ### US-09 — Attendance dashboard
-**Priority:** Should have | **Trello:** [Design dashboard](https://trello.com/c/AzIRmygc)
+**Priority:** Should have | **Status:** Done | **Trello:** [Design dashboard](https://trello.com/c/AzIRmygc)
 
 > **As a** student
 > **I want** to see my attendance percentage per module
@@ -187,14 +211,14 @@ User stories follow the format **As a** [user], **I want** [goal], **so that** [
 
 **Tasks**
 
-- [ ] Design dashboard wireframe
-- [ ] Build attendance percentage endpoint
-- [ ] Show a warning when close to the threshold
+- [x] Design the dashboard wireframe
+- [x] Build the attendance summary endpoint
+- [x] Warn the student when a module is below its threshold
 
 ---
 
 ### US-10 — Profile and settings
-**Priority:** Could have | **Trello:** [Design user profile page](https://trello.com/c/apA5hNpe), [Design settings page](https://trello.com/c/QlwJZ1NB)
+**Priority:** Could have | **Status:** Not started | **Trello:** [Design user profile page](https://trello.com/c/apA5hNpe), [Design settings page](https://trello.com/c/QlwJZ1NB)
 
 > **As a** user
 > **I want** to view my profile and change basic settings
@@ -202,25 +226,53 @@ User stories follow the format **As a** [user], **I want** [goal], **so that** [
 
 **Tasks**
 
-- [ ] Design profile and settings wireframes
-- [ ] Build profile endpoint
+- [ ] Design profile and settings screens
+- [ ] Build the profile endpoint
+
+---
+
+### US-11 — Lecturer class management (added during development)
+**Priority:** Should have | **Status:** Done
+
+> **As a** lecturer
+> **I want** to manage my modules, restart a session, schedule extra classes and correct attendance by hand
+> **so that** I can run real classes without asking an administrator for help.
+
+**Tasks**
+
+- [x] Create, edit and delete modules
+- [x] Restart a session
+- [x] Schedule ad-hoc classes without a timetable
+- [x] Manually override a student's attendance
+
+---
+
+### US-12 — Admin dashboard (added during development)
+**Priority:** Should have | **Status:** Done
+
+> **As an** administrator
+> **I want** to manage user accounts and see activity across the system
+> **so that** I can support students and lecturers without editing the database directly.
+
+**Tasks**
+
+- [x] Build account management (create, edit, deactivate users)
+- [x] Show activity tracking per user
+- [x] Add a secure first-admin setup with a shared setup code
+- [x] Write a user guide for the dashboard
 
 ---
 
 ## Reflection (STAR)
 
 **Situation**
-
-Early in the project our Trello cards were written as team actions, such as "Determine who will use the system" or "Identify what the QR system will do". They described what we had to figure out, but not what the user actually needed.
+Our early Trello cards were written as team actions, such as "Determine who will use the system" or "Identify what the QR system will do". They described what we had to figure out, but not what a user actually needed.
 
 **Task**
-
-We needed to turn the business case into proper user stories that a developer could build and a tester could check.
+As Product Owner, I needed user stories clear enough to build from and test against, and a way to decide what had to be in the first working version.
 
 **Action**
-
-We rewrote the key Sprint 4 cards as user stories using the "As a / I want / so that" format, starting in August and refining them in October, covering students, lecturers, administrators and the system itself. For this portfolio I added acceptance criteria and broke each story into tasks across database, API, frontend and testing.
+We rewrote the key Sprint 4 cards as user stories in the "As a / I want / so that" format, starting in August and refining them in October. I gave each story acceptance criteria and broke it into tasks across database, API, frontend and testing. When I built the system, I worked through the "Must have" stories first. Testing with real lecturer and admin accounts showed gaps the original stories missed, so I added two new stories for lecturer class management and an admin dashboard.
 
 **Result**
-
-Writing stories this way made it obvious which features were core, such as login, rotating QR codes and duplicate prevention, and which could wait, such as profile settings. Breaking stories into tasks also showed hidden work, for example that duplicate prevention needs a database constraint, not just a check in code. I learned that a good story describes value for a user, while the tasks describe how we deliver it.
+All seven "Must have" stories are delivered in the deployed system, including the rotating QR code and duplicate check-in prevention. Writing acceptance criteria first made testing straightforward: I checked each feature against them. I also learned that stories change once real users touch the system. US-11 and US-12 did not exist in the plan, and I left the data retention policy, report export and profile pages for a later release. A good story describes value for a user, the tasks describe how to deliver it, and the backlog has to stay open to new stories.

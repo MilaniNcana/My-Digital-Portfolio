@@ -10,7 +10,7 @@ title: Agile Logbook — QAMS
 
 **Kept by:** Milani Ncana (Product Owner and Agile Lead / Scrum Master)
 
-**Source:** Entries are dated from card start, due and completion dates on our [Trello board](https://trello.com/b/iQ0mXfK6/qr-attendance). Full weekly logbooks were also submitted in the PRP37XS Word template.
+**Source:** Planning entries are dated from card start, due and completion dates on our [Trello board](https://trello.com/b/iQ0mXfK6/qr-attendance). Development entries are dated from the commit history of the QAMS code repository. Full weekly and monthly logbooks were also submitted in the PRP37XS Word template.
 
 <!-- Optional: link the Word logbooks here once uploaded to the repo, e.g. [Week 14–17 July (Word)](docs/logbook-14-17-jul.docx) -->
 
@@ -83,38 +83,56 @@ title: Agile Logbook — QAMS
 | Wed 5 – Thu 6 Aug | QR behaviour, attendance rules, users, data and features | Identify what the QR system will do (US-02); Decide the QR system will track attendance (US-03); Determine who will use the system (US-04); Determine what data needs to be stored (US-05); Determine what features are required by the QR system (US-06). All marked complete on the board by 6 Aug. |
 | Fri 7 Aug | Sprint review and retrospective | Sprint 4 closed |
 
-**Blockers:** GitHub repository still not finalised; database design and UI wireframes not started.
+**Blockers:** GitHub repository still not finalised; database design not yet finalised.
 
-**Review:** 6 of 6 cards done. Core user stories now on the board.
+**Review:** 6 of 6 cards done. Core user stories now on the board. Figma wireframes produced for the student mobile flow (login, dashboard, scan, scan result, history) and the lecturer desktop flow.
 
-**Retrospective:** Restructuring Trello made progress visible to everyone. Action: database design and wireframes are next; repository must be resolved before development.
+**Retrospective:** Restructuring Trello made progress visible to everyone. Action: finalise the database design; the repository must be resolved before development can start.
 
 ---
 
-### Backlog update — 27 October 2026
+### Development — 21 August 2026: working core system
 
-**Done:** Design the database; Determine what information must be stored in database; The database should store user details; The database should store QR IDs; Determine how users will interact with the system; Determine how user requests QR code; Determine how system generates QR code. User stories on the first three Sprint 4 cards (US-01 to US-03) refined.
+**Goal:** Get the full system running end to end against a real database.
 
-**Still open:** QR storage and verification logic, confirmation message, all UI wireframes.
+**Done:** Set up the QAMS GitHub repository and imported the system. Tested the database, backend and frontend end to end and fixed the bugs found: a seed password that could not log in, schema columns that did not match the code, errors when loading attendance history, and a broken QR image on the lecturer's live screen. Added a Blackboard-embeddable check-in page and a log out control.
 
-**Blocker:** Finalise GitHub repository (open since July).
+**Blocker resolved:** The repository blocker from Weeks 3 and 4 is cleared; development can proceed.
+
+---
+
+### Development — 15 to 17 September 2026: real users and deployment
+
+**Goal:** Make the system usable by real lecturers and administrators, and put it online.
+
+**Done:** Added Windows setup scripts and a setup guide. Built the admin dashboard with account management and activity tracking. Fixed expired tokens failing silently. Loaded seed data with real student numbers and admin logins. Added lecturer tools: module management, session restart, ad-hoc classes and manual attendance override. Deployed the frontend on Vercel, pointed it at the backend on Render, and fixed camera scanning and page refresh errors found on the live site.
+
+**Retrospective:** Testing with real accounts showed needs the plan had missed, which became two new user stories (US-11 and US-12).
+
+---
+
+### Development — 30 September to 1 October 2026: hardening
+
+**Done:** Protected the first-admin signup with a shared setup code. Added a daily automated check on the Aiven-hosted database.
+
+---
+
+### Board update — 27 October 2026
+
+The database design and QR-flow cards were marked complete on Trello, catching the board up with work already done in the code. The remaining Trello cards (QR verification, confirmation and UI design) were never updated, although that work is finished in the deployed system.
 
 ---
 
 ## Reflection (STAR)
 
 **Situation**
-
-As Agile Lead I had to keep a weekly logbook of our stand-ups, planning, reviews and retrospectives while the team worked mostly through Trello and short meetings.
+As Agile Lead I kept a weekly logbook of our stand-ups, planning, reviews and retrospectives, first through four planning sprints on Trello and then through development in the code repository.
 
 **Task**
-
-The logbook had to be an honest record of what the team actually did each week, so it could be used to track progress and spot problems.
+The logbook had to be an honest record of what actually happened each week, so it could be used to track progress, spot problems and serve as evidence.
 
 **Action**
-
-I dated each entry from the start, due and completion dates on the Trello cards rather than writing from memory. Early on, one draft entry described more progress than the board showed, so I changed my approach: check the live board first, then write. Each week I recorded the sprint goal, what was done per day, blockers, the review result and one retrospective action.
+My first draft of an early entry described more progress than we had actually made. When I checked it against the Trello board, the board showed we were still planning, so I rebuilt the July and August entries from card start, due and completion dates. For development, the board was no longer being updated, so I used the commit history of the code repository instead. Each entry records the goal, what was done, blockers, the review and one retrospective action.
 
 **Result**
-
-The logbook matches the board, which makes it trustworthy evidence. Reading the entries in a row also showed a pattern I might have missed week to week: the GitHub repository blocker appears in every entry from Week 3 onward. I learned that a logbook is most useful when it is grounded in real data, and that recurring blockers in it are a signal to escalate, not just to note again.
+The logbook now matches the evidence, which makes it trustworthy. Reading the entries in order also shows a pattern I might have missed week to week: the repository blocker appears from Week 3 until I cleared it on 21 August. I learned two things. A logbook is only worth something when it is grounded in real data, not in what the work should look like. And a blocker that appears in several entries in a row is a signal to act, not just to note again.
