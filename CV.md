@@ -33,7 +33,7 @@ Build web and desktop applications using modern development technologies and ful
 
 ### Trogster
 **Software Developer**
-- Built a task management system enabling organizations to create tasks, manage workers, and collect structured field data
+- Built a task management system enabling organisations to create tasks, manage workers, and collect structured field data
 - Developed features using Java, Spring Boot, Vue.js, and Flutter
 
 ### Manyano High School
@@ -49,7 +49,7 @@ Build web and desktop applications using modern development technologies and ful
 ## Professional and Personal Projects
 
 ### Trogster
-A task management system that allows organizations to create tasks, manage workers, and collect structured field data.  
+A task management system that allows organisations to create tasks, manage workers, and collect structured field data.  
 **Tech:** Java, Spring Boot, Vue.js, Flutter
 
 ### RentMyStuff

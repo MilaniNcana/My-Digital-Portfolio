@@ -29,7 +29,7 @@ title: Agile Logbook — QAMS
 
 **Blockers:** None recorded.
 
-**Review:** 4 of 4 cards done. Several ideas on the table (QR attendance, student marketplace, food ordering, shop inventory).
+**Review:** 4 of 4 cards done. Each member's idea was researched and backed with basic information and examples.
 
 **Retrospective:** Good participation from everyone. Ideas needed a common way to compare them, which shaped Sprint 2.
 
@@ -80,9 +80,8 @@ title: Agile Logbook — QAMS
 | Day | Stand-up focus | Done |
 |-----|----------------|------|
 | Tue 4 Aug | System structure and login | Design the actual structure of the system (US-01) |
-| Wed 5 Aug | QR behaviour and attendance rules | Identify what the QR system will do (US-02); Decide the QR system will track attendance (US-03) |
-| Thu 6 Aug | Users, roles and data | Determine who will use the system (US-04); Determine what data needs to be stored (US-05) |
-| Fri 7 Aug | Feature list | Determine what features are required by the QR system (US-06) |
+| Wed 5 – Thu 6 Aug | QR behaviour, attendance rules, users, data and features | Identify what the QR system will do (US-02); Decide the QR system will track attendance (US-03); Determine who will use the system (US-04); Determine what data needs to be stored (US-05); Determine what features are required by the QR system (US-06). All marked complete on the board by 6 Aug. |
+| Fri 7 Aug | Sprint review and retrospective | Sprint 4 closed |
 
 **Blockers:** GitHub repository still not finalised; database design and UI wireframes not started.
 
@@ -94,7 +93,7 @@ title: Agile Logbook — QAMS
 
 ### Backlog update — 27 October 2026
 
-**Done:** Design the database; Determine what information must be stored in database; The database should store user details; The database should store QR IDs; Determine how users will interact with the system; Determine how user requests QR code; Determine how system generates QR code. Sprint 4 user stories refined on their cards.
+**Done:** Design the database; Determine what information must be stored in database; The database should store user details; The database should store QR IDs; Determine how users will interact with the system; Determine how user requests QR code; Determine how system generates QR code. User stories on the first three Sprint 4 cards (US-01 to US-03) refined.
 
 **Still open:** QR storage and verification logic, confirmation message, all UI wireframes.
 

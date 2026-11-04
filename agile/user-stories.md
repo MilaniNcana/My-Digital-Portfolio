@@ -8,7 +8,7 @@ title: User Stories and Tasks — QAMS
 
 ## Evidence
 
-User stories follow the format **As a** [user], **I want** [goal], **so that** [benefit]. Each story has acceptance criteria and is broken into tasks. Stories US-01 to US-06 were written on our Trello board in Sprint 4; US-07 to US-10 come from the remaining Product Backlog.
+User stories follow the format **As a** [user], **I want** [goal], **so that** [benefit]. Each story has acceptance criteria and is broken into tasks. Stories US-01 to US-06 are written on the Sprint 4 cards of our Trello board; US-07 to US-10 come from the remaining Product Backlog.
 
 **Priority key (MoSCoW):** Must have, Should have, Could have.
 
@@ -117,7 +117,7 @@ User stories follow the format **As a** [user], **I want** [goal], **so that** [
 **Tasks**
 
 - [ ] List every field to store and justify it
-- [ ] Agree a retention period with the Product Owner
+- [ ] Set the retention period (Product Owner decision)
 - [ ] Design archive table or job
 
 ---
@@ -219,7 +219,7 @@ We needed to turn the business case into proper user stories that a developer co
 
 **Action**
 
-In Sprint 4 we rewrote the key cards as user stories using the "As a / I want / so that" format, covering students, lecturers, administrators and the system itself. For this portfolio I added acceptance criteria and broke each story into tasks across database, API, frontend and testing.
+We rewrote the key Sprint 4 cards as user stories using the "As a / I want / so that" format, starting in August and refining them in October, covering students, lecturers, administrators and the system itself. For this portfolio I added acceptance criteria and broke each story into tasks across database, API, frontend and testing.
 
 **Result**
 

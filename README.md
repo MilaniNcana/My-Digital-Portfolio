@@ -3,7 +3,7 @@
 **Milani Ncana — Software Developer**  
 Cape Peninsula University of Technology | Diploma in ICT: Application Development
 
-Welcome to my digital portfolio. This portfolio showcases my journey through work readiness training, professional development, and technical growth as a software developer. It was built using **GitHub Flavoured Markdown** and published on **GitHub Pages** as part of my Project Presentation 3 (PRP370S) assessment.
+Welcome to my digital portfolio. This portfolio showcases my journey through work readiness training, professional development, and technical growth as a software developer. It was built using **GitHub Flavoured Markdown** and published on **GitHub Pages** as part of my Project Presentation 3 (PRP370S) assessment, and it now also includes the Agile evidence from our team project.
 
 ---
 
@@ -97,6 +97,6 @@ Agile artefacts from our team project, the **QR Code Attendance Management Syste
 
 ## <i data-lucide="target"></i> Final Reflection
 
-This portfolio taught me to strategically align my skills with career goals and showcase growth through evidence. Building it in Markdown and deploying it on GitHub Pages demonstrated that professional presentation and technical skill go hand in hand. Through the work readiness training, mock interview practice, and self-reflection process, I have developed a strong foundation for entering the software development industry with confidence.
+This portfolio taught me to strategically align my skills with career goals and showcase growth through evidence. Building it in Markdown and deploying it on GitHub Pages demonstrated that professional presentation and technical skill go hand in hand. Through the work readiness training, mock interview practice, and self-reflection process, I have developed a strong foundation for entering the software development industry with confidence. Leading QAMS as Product Owner and Scrum Master added practical Agile experience: running sprints, managing a backlog, and dealing with real blockers in a team.
 
 > **Built with** GitHub Flavoured Markdown | **Deployed on** GitHub Pages
